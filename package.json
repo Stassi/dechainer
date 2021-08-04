@@ -2,6 +2,9 @@
   "name": "dechainer",
   "version": "0.0.1",
   "description": "Functional utilities.",
+  "keywords": [
+    "identity"
+  ],
   "homepage": "https://github.com/Stassi/dechainer#readme",
   "license": "MIT",
   "author": "Andreas Stassivik <andreas@stassi.net> (https://github.com/Stassi)",
