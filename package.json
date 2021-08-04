@@ -1,6 +1,6 @@
 {
   "name": "dechainer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Functional utilities.",
   "keywords": [
     "identity"
@@ -13,7 +13,7 @@
   ],
   "type": "module",
   "types": "./lib/dechainer.d.ts",
-  "exports": "./lib/dechainer.mjs",
+  "exports": "./lib/dechainer.js",
   "repository": "github:Stassi/dechainer",
   "scripts": {
     "build": "rollup -c",
