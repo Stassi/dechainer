@@ -4,7 +4,7 @@ import ts from 'rollup-plugin-ts'
 const rollupConfig = defineConfig({
   input: 'src/index.ts',
   output: {
-    file: 'lib/dechainer.mjs',
+    file: 'lib/dechainer.js',
     format: 'es',
     sourcemap: true,
   },
