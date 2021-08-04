@@ -1,0 +1,58 @@
+{
+  "name": "dechainer",
+  "version": "0.1.0",
+  "description": "Functional utilities.",
+  "keywords": [
+    "identity"
+  ],
+  "homepage": "https://github.com/Stassi/dechainer#readme",
+  "license": "MIT",
+  "author": "Andreas Stassivik <andreas@stassi.net> (https://github.com/Stassi)",
+  "files": [
+    "lib/**/*"
+  ],
+  "type": "module",
+  "types": "./lib/dechainer.d.ts",
+  "exports": "./lib/dechainer.mjs",
+  "repository": "github:Stassi/dechainer",
+  "scripts": {
+    "build": "rollup -c",
+    "coverage": "jest --coverage",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write .",
+    "prepublishOnly": "npm run build",
+    "test": "jest && package-check && npm run format:check"
+  },
+  "devDependencies": {
+    "@skypack/package-check": "^0.2.2",
+    "@types/jest": "^26.0.24",
+    "jest": "^27.0.5",
+    "prettier": "2.3.2",
+    "rollup": "^2.55.1",
+    "rollup-plugin-ts": "^1.4.0",
+    "ts-jest": "^27.0.4",
+    "typescript": "^4.3.4"
+  },
+  "engines": {
+    "node": "^12.22.4 || ^14.17.4 || >=16.6.0",
+    "npm": "^6.14.13 || >=7.20.0"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  },
+  "prettier": {
+    "endOfLine": "auto",
+    "semi": false,
+    "singleQuote": true
+  },
+  "sideEffects": false
+}
