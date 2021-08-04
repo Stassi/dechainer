@@ -1,5 +1,4 @@
 import { defineConfig } from 'rollup'
-import json from '@rollup/plugin-json'
 import ts from 'rollup-plugin-ts'
 
 const rollupConfig = defineConfig({
@@ -9,7 +8,7 @@ const rollupConfig = defineConfig({
     format: 'es',
     sourcemap: true,
   },
-  plugins: [json({ preferConst: true }), ts()],
+  plugins: [ts()],
 })
 
 export default rollupConfig

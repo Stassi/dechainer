@@ -21,7 +21,6 @@
     "test": "jest && package-check && npm run format:check"
   },
   "devDependencies": {
-    "@rollup/plugin-json": "^4.1.0",
     "@skypack/package-check": "^0.2.2",
     "@types/jest": "^26.0.24",
     "jest": "^27.0.5",
