@@ -11,9 +11,10 @@
   "files": [
     "lib/**/*"
   ],
+  "main": "./lib/dechainer.mjs",
   "type": "module",
   "types": "./lib/dechainer.d.ts",
-  "exports": "./lib/dechainer.js",
+  "exports": "./lib/dechainer.mjs",
   "repository": "github:Stassi/dechainer",
   "scripts": {
     "build": "rollup -c",
