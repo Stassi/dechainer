@@ -11,6 +11,7 @@
   "files": [
     "lib/**/*"
   ],
+  "main": "./lib/dechainer.mjs",
   "type": "module",
   "types": "./lib/dechainer.d.ts",
   "exports": "./lib/dechainer.mjs",
