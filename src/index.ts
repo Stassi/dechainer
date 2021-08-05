@@ -1,3 +1,3 @@
-import identity from './identity'
+import { identity } from './functions'
 
 export { identity }
