@@ -18,11 +18,12 @@
   "repository": "github:Stassi/dechainer",
   "scripts": {
     "build": "rollup -c",
-    "coverage": "jest --coverage",
+    "coverage": "npm run test:unit -- --coverage",
     "format:check": "prettier --check .",
     "format:write": "prettier --write .",
     "prepublishOnly": "npm run build",
-    "test": "jest && package-check && npm run format:check"
+    "test": "npm run test:unit && npm run format:check && package-check",
+    "test:unit": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "devDependencies": {
     "@skypack/package-check": "^0.2.2",
@@ -47,8 +48,12 @@
     "x64"
   ],
   "jest": {
-    "preset": "ts-jest",
-    "testEnvironment": "node"
+    "globals": {
+      "ts-jest": {
+        "useESM": true
+      }
+    },
+    "preset": "ts-jest/presets/default-esm"
   },
   "prettier": {
     "endOfLine": "auto",
