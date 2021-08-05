@@ -6,7 +6,6 @@
     "module": "ES2015",
     "moduleResolution": "node",
     "outDir": "lib",
-    "resolveJsonModule": true,
     "strict": true,
     "target": "ES2015"
   },
