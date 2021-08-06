@@ -1,3 +1,4 @@
+import { add, multiply } from './arithmetic'
 import { ceiling, floor } from './integerRounding'
 
-export { ceiling, floor }
+export { add, ceiling, floor, multiply }
