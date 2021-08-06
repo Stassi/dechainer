@@ -1,3 +1,4 @@
-import identity from './identity'
+import { identity } from './functions'
+import { ceiling, floor } from './math'
 
-export { identity }
+export { ceiling, identity, floor }
