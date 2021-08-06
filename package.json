@@ -1,6 +1,6 @@
 {
   "name": "dechainer",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Functional utilities.",
   "keywords": [
     "functional programming"
