@@ -1,4 +1,7 @@
+import type { Callback, IdentityCallback } from './functions'
 import { identity } from './functions'
-import { ceiling, floor } from './math'
+import { add, ceiling, floor, multiply } from './math'
+import { isNumber, isString } from './typePredicates'
 
-export { ceiling, identity, floor }
+export type { Callback, IdentityCallback }
+export { add, ceiling, identity, isNumber, isString, floor, multiply }
