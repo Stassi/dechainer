@@ -70,15 +70,15 @@ describe.each([
   }) => {
     describe('add', () => {
       it('should return the sum of two numbers', () => {
-        expect(add(x)(y)).toStrictEqual(expectedSum)
-        expect(add(x, y)).toStrictEqual(expectedSum)
+        expect(add(x)(y)).toBe(expectedSum)
+        expect(add(x, y)).toBe(expectedSum)
       })
     })
 
     describe('multiply', () => {
       it('should return the product of two numbers', () => {
-        expect(multiply(x)(y)).toStrictEqual(expectedProduct)
-        expect(multiply(x, y)).toStrictEqual(expectedProduct)
+        expect(multiply(x)(y)).toBe(expectedProduct)
+        expect(multiply(x, y)).toBe(expectedProduct)
       })
     })
   }

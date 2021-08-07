@@ -42,13 +42,13 @@ describe('integer rounding functions', () => {
     }) => {
       describe('ceiling', () => {
         it('should round a number up to the next largest integer', () => {
-          expect(ceilingFn(input)).toStrictEqual(ceiling)
+          expect(ceilingFn(input)).toBe(ceiling)
         })
       })
 
       describe('floor', () => {
         it('should round a number down to the next smallest integer', () => {
-          expect(floorFn(input)).toStrictEqual(floor)
+          expect(floorFn(input)).toBe(floor)
         })
       })
     }
