@@ -1,8 +1,7 @@
-import type { IdentityCallback } from '../functions'
+import type { NumberCallback } from '../functions'
 import { isNumber } from '../typePredicates'
 import { negate } from './inversions'
 
-type NumberCallback = IdentityCallback<number>
 type NumberOrCallback = number | NumberCallback
 
 export function add(a: number): NumberCallback
