@@ -29,3 +29,9 @@ export function divide(a: number, b?: number): NumberOrCallback {
   const divideByFirstParam: NumberCallback = multiply(reciprocal(a))
   return isNumber(b) ? divideByFirstParam(b) : divideByFirstParam
 }
+
+export function remainder(a: number): NumberCallback
+export function remainder(a: number, b: number): number
+export function remainder(a: number, b?: number): NumberOrCallback {
+  return isNumber(b) ? b % a : (c: number): number => c % a
+}

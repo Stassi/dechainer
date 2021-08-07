@@ -11,6 +11,7 @@ import {
   multiply,
   negate,
   reciprocal,
+  remainder,
   subtract,
 } from './math'
 
@@ -30,5 +31,6 @@ export {
   negate,
   NumberCallback,
   reciprocal,
+  remainder,
   subtract,
 }
