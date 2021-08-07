@@ -1,6 +1,6 @@
-import { ceiling as ceilingFn, floor as floorFn } from './integerRounding'
+import { ceiling as ceilingFn, floor as floorFn } from './rounding'
 
-describe('integer rounding functions', () => {
+describe('rounding', () => {
   describe.each([
     {
       ceiling: -2,
