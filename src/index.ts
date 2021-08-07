@@ -9,6 +9,7 @@ import {
   increment,
   multiply,
   negate,
+  reciprocal,
 } from './math'
 
 export {
@@ -24,4 +25,5 @@ export {
   floor,
   multiply,
   negate,
+  reciprocal,
 }
