@@ -1,4 +1,4 @@
-import { add, divide, multiply, subtract } from './arithmetic'
+import { add, divide, multiply, remainder, subtract } from './arithmetic'
 
 describe('arithmetic', () => {
   describe.each([
@@ -9,6 +9,7 @@ describe('arithmetic', () => {
         difference: 0,
         product: 0,
         quotient: NaN,
+        remainder: NaN,
         sum: 0,
       },
     },
@@ -19,6 +20,7 @@ describe('arithmetic', () => {
         difference: 1,
         product: -0,
         quotient: -0,
+        remainder: 0,
         sum: -1,
       },
     },
@@ -29,6 +31,7 @@ describe('arithmetic', () => {
         difference: 0,
         product: 1,
         quotient: 1,
+        remainder: -0,
         sum: -2,
       },
     },
@@ -39,6 +42,7 @@ describe('arithmetic', () => {
         difference: -1,
         product: 0,
         quotient: 0,
+        remainder: 0,
         sum: 1,
       },
     },
@@ -49,6 +53,7 @@ describe('arithmetic', () => {
         difference: 1,
         product: 0,
         quotient: Infinity,
+        remainder: NaN,
         sum: 1,
       },
     },
@@ -59,6 +64,7 @@ describe('arithmetic', () => {
         difference: 0,
         product: 0.25,
         quotient: 1,
+        remainder: 0,
         sum: 1,
       },
     },
@@ -69,6 +75,7 @@ describe('arithmetic', () => {
         difference: 0,
         product: 1,
         quotient: 1,
+        remainder: 0,
         sum: 2,
       },
     },
@@ -81,6 +88,7 @@ describe('arithmetic', () => {
         difference: expectedDifference,
         product: expectedProduct,
         quotient: expectedQuotient,
+        remainder: expectedRemainder,
         sum: expectedSum,
       },
     }: {
@@ -90,6 +98,7 @@ describe('arithmetic', () => {
         difference: number
         product: number
         quotient: number
+        remainder: number
         sum: number
       }
     }) => {
@@ -118,6 +127,13 @@ describe('arithmetic', () => {
         it('should return the quotient of two numbers', () => {
           expect(divide(x)(y)).toStrictEqual(expectedQuotient)
           expect(divide(x, y)).toStrictEqual(expectedQuotient)
+        })
+      })
+
+      describe('remainder', () => {
+        it('should return the remainder of two numbers', () => {
+          expect(remainder(x)(y)).toBe(expectedRemainder)
+          expect(remainder(x, y)).toBe(expectedRemainder)
         })
       })
     }
