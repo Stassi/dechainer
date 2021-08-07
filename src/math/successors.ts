@@ -1,6 +1,6 @@
 import type { IdentityCallback } from '../functions'
 import { add } from './arithmetic'
-import negate from './negate'
+import { negate } from './inversions'
 
 type NumberCallback = IdentityCallback<number>
 
