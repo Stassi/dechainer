@@ -13,7 +13,7 @@ export function add(a: number, b?: number): NumberOrCallback {
 export function subtract(a: number): NumberCallback
 export function subtract(a: number, b: number): number
 export function subtract(a: number, b?: number): NumberOrCallback {
-  const subtractFirstParam = add(negate(a))
+  const subtractFirstParam: NumberCallback = add(negate(a))
   return isNumber(b) ? subtractFirstParam(b) : subtractFirstParam
 }
 
