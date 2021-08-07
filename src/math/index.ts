@@ -1,4 +1,4 @@
-import { add, multiply } from './arithmetic'
+import { add, multiply, subtract } from './arithmetic'
 import { negate, reciprocal } from './inversions'
 import { ceiling, floor } from './rounding'
 import { decrement, increment } from './successors'
@@ -12,4 +12,5 @@ export {
   multiply,
   negate,
   reciprocal,
+  subtract,
 }

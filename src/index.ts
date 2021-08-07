@@ -10,6 +10,7 @@ import {
   multiply,
   negate,
   reciprocal,
+  subtract,
 } from './math'
 
 export {
@@ -26,4 +27,5 @@ export {
   multiply,
   negate,
   reciprocal,
+  subtract,
 }
