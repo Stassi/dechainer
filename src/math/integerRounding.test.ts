@@ -1,7 +1,5 @@
 import { ceiling as ceilingFn, floor as floorFn } from './integerRounding'
 
-type Roundable = Parameters<typeof ceilingFn>[0] | Parameters<typeof floorFn>[0]
-
 describe('integer rounding functions', () => {
   describe.each([
     {
@@ -36,9 +34,9 @@ describe('integer rounding functions', () => {
       floor,
       input,
     }: {
-      ceiling: Roundable
-      floor: Roundable
-      input: Roundable
+      ceiling: number
+      floor: number
+      input: number
     }) => {
       describe('ceiling', () => {
         it('should round a number up to the next largest integer', () => {
