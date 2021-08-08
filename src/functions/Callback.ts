@@ -1,5 +1,7 @@
-export type Callback<Param, Returns> = (x: Param) => Returns
+export type Callback<I, O> = (x: I) => O
 
-export type IdentityCallback<Param> = Callback<Param, Param>
+export type IdentityCallback<T> = Callback<T, T>
 
 export type NumberCallback = IdentityCallback<number>
+
+export type ReducerCallback<T> = Callback<T[], T>

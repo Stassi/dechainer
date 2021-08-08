@@ -1,4 +1,9 @@
-import type { Callback, IdentityCallback, NumberCallback } from './functions'
+import type {
+  Callback,
+  IdentityCallback,
+  NumberCallback,
+  ReducerCallback,
+} from './functions'
 import { identity } from './functions'
 import { isNumber, isString } from './typePredicates'
 import {
@@ -31,6 +36,7 @@ export {
   negate,
   NumberCallback,
   reciprocal,
+  ReducerCallback,
   remainder,
   subtract,
 }

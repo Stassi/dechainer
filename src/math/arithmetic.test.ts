@@ -106,6 +106,7 @@ describe('arithmetic', () => {
         it('should return the sum of two numbers', () => {
           expect(add(x)(y)).toBe(expectedSum)
           expect(add(x, y)).toBe(expectedSum)
+          expect(add(0, x, y)).toBe(expectedSum)
         })
       })
 
