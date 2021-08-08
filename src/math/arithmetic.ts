@@ -1,13 +1,24 @@
-import type { NumberCallback } from '../functions'
+import type { NumberCallback, ReducerCallback } from '../functions'
+import { head } from '../arrayAccessors'
 import { isNumber } from '../typePredicates'
+import length from '../length'
+import { reduce } from '../iteration'
 import { negate, reciprocal } from './inversions'
 
 type NumberOrCallback = number | NumberCallback
 
-export function add(a: number): NumberCallback
-export function add(a: number, b: number): number
-export function add(a: number, b?: number): NumberOrCallback {
-  return isNumber(b) ? a + b : (c: number): number => a + c
+function elementaryAdd(x: number, y: number): number {
+  return x + y
+}
+
+const reduceElementaryAdd: ReducerCallback<number> = reduce(elementaryAdd)
+
+export function add(addend: number): NumberCallback
+export function add(...addends: number[]): number
+export function add(...addends: number[]): NumberOrCallback {
+  return length(addends) === 1
+    ? (n: number): number => elementaryAdd(n, head(addends))
+    : reduceElementaryAdd(addends)
 }
 
 export function subtract(a: number): NumberCallback
