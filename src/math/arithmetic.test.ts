@@ -79,6 +79,28 @@ describe('arithmetic', () => {
         sum: 2,
       },
     },
+    {
+      x: 2,
+      y: 3,
+      expected: {
+        difference: 1,
+        product: 6,
+        quotient: 1.5,
+        remainder: 1,
+        sum: 5,
+      },
+    },
+    {
+      x: 3,
+      y: 2,
+      expected: {
+        difference: -1,
+        product: 6,
+        quotient: 0.6666666666666666,
+        remainder: 2,
+        sum: 5,
+      },
+    },
   ])(
     'input: (x: $x, y: $y)',
     ({
