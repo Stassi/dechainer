@@ -1,4 +1,11 @@
-import { add, divide, multiply, remainder, subtract } from './arithmetic'
+import {
+  add,
+  divide,
+  exponentiate,
+  multiply,
+  remainder,
+  subtract,
+} from './arithmetic'
 
 describe('arithmetic', () => {
   describe.each([
@@ -7,6 +14,7 @@ describe('arithmetic', () => {
       y: 0,
       expected: {
         difference: 0,
+        power: 1,
         product: 0,
         quotient: NaN,
         remainder: NaN,
@@ -18,6 +26,7 @@ describe('arithmetic', () => {
       y: 0,
       expected: {
         difference: 1,
+        power: 1,
         product: -0,
         quotient: -0,
         remainder: 0,
@@ -29,6 +38,7 @@ describe('arithmetic', () => {
       y: -1,
       expected: {
         difference: 0,
+        power: -1,
         product: 1,
         quotient: 1,
         remainder: -0,
@@ -40,6 +50,7 @@ describe('arithmetic', () => {
       y: 0,
       expected: {
         difference: -1,
+        power: 1,
         product: 0,
         quotient: 0,
         remainder: 0,
@@ -51,6 +62,7 @@ describe('arithmetic', () => {
       y: 1,
       expected: {
         difference: 1,
+        power: 0,
         product: 0,
         quotient: Infinity,
         remainder: NaN,
@@ -62,6 +74,7 @@ describe('arithmetic', () => {
       y: 0.5,
       expected: {
         difference: 0,
+        power: 0.7071067811865476,
         product: 0.25,
         quotient: 1,
         remainder: 0,
@@ -73,6 +86,7 @@ describe('arithmetic', () => {
       y: 1,
       expected: {
         difference: 0,
+        power: 1,
         product: 1,
         quotient: 1,
         remainder: 0,
@@ -84,6 +98,7 @@ describe('arithmetic', () => {
       y: 3,
       expected: {
         difference: 1,
+        power: 8,
         product: 6,
         quotient: 1.5,
         remainder: 1,
@@ -95,6 +110,7 @@ describe('arithmetic', () => {
       y: 2,
       expected: {
         difference: -1,
+        power: 9,
         product: 6,
         quotient: 0.6666666666666666,
         remainder: 2,
@@ -108,6 +124,7 @@ describe('arithmetic', () => {
       y,
       expected: {
         difference: expectedDifference,
+        power: expectedPower,
         product: expectedProduct,
         quotient: expectedQuotient,
         remainder: expectedRemainder,
@@ -118,6 +135,7 @@ describe('arithmetic', () => {
       y: number
       expected: {
         difference: number
+        power: number
         product: number
         quotient: number
         remainder: number
@@ -158,6 +176,14 @@ describe('arithmetic', () => {
         it('should return the remainder of two numbers', () => {
           expect(remainder(x)(y)).toBe(expectedRemainder)
           expect(remainder(x, y)).toBe(expectedRemainder)
+        })
+      })
+
+      describe('exponentiate', () => {
+        it('should return the base raised to the power of the exponent', () => {
+          expect(exponentiate(x)(y)).toBe(expectedPower)
+          expect(exponentiate(x, y)).toBe(expectedPower)
+          expect(exponentiate(x, y, 1)).toBe(expectedPower)
         })
       })
     }
