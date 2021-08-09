@@ -11,7 +11,13 @@ function elementaryAdd(x: number, y: number): number {
   return x + y
 }
 
+function elementaryMultiply(x: number, y: number): number {
+  return x * y
+}
+
 const reduceElementaryAdd: ReducerCallback<number> = reduce(elementaryAdd)
+const reduceElementaryMultiply: ReducerCallback<number> =
+  reduce(elementaryMultiply)
 
 export function add(addend: number): NumberCallback
 export function add(...addends: number[]): number
@@ -28,10 +34,12 @@ export function subtract(a: number, b?: number): NumberOrCallback {
   return isNumber(b) ? subtractFirstParam(b) : subtractFirstParam
 }
 
-export function multiply(a: number): NumberCallback
-export function multiply(a: number, b: number): number
-export function multiply(a: number, b?: number): NumberOrCallback {
-  return isNumber(b) ? a * b : (c: number): number => a * c
+export function multiply(factor: number): NumberCallback
+export function multiply(...factors: number[]): number
+export function multiply(...factors: number[]): NumberOrCallback {
+  return length(factors) === 1
+    ? (n: number): number => elementaryMultiply(n, head(factors))
+    : reduceElementaryMultiply(factors)
 }
 
 export function divide(a: number): NumberCallback
