@@ -30,7 +30,7 @@ export function add(addend: number): NumberCallback
 export function add(...addends: number[]): number
 export function add(...addends: number[]): NumberOrCallback {
   return length(addends) === 1
-    ? (n: number): number => elementaryAdd(n, head(addends))
+    ? (n: number): number => elementaryAdd(head(addends), n)
     : reduceElementaryAdd(addends)
 }
 
@@ -45,7 +45,7 @@ export function multiply(factor: number): NumberCallback
 export function multiply(...factors: number[]): number
 export function multiply(...factors: number[]): NumberOrCallback {
   return length(factors) === 1
-    ? (n: number): number => elementaryMultiply(n, head(factors))
+    ? (n: number): number => elementaryMultiply(head(factors), n)
     : reduceElementaryMultiply(factors)
 }
 
