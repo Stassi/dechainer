@@ -121,6 +121,7 @@ describe('arithmetic', () => {
         it('should return the product of two numbers', () => {
           expect(multiply(x)(y)).toBe(expectedProduct)
           expect(multiply(x, y)).toBe(expectedProduct)
+          expect(multiply(1, x, y)).toBe(expectedProduct)
         })
       })
 
