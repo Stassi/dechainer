@@ -15,9 +15,16 @@ function elementaryMultiply(x: number, y: number): number {
   return x * y
 }
 
+function elementaryExponentiate(base: number, exponent: number): number {
+  return base ** exponent
+}
+
 const reduceElementaryAdd: ReducerCallback<number> = reduce(elementaryAdd)
 const reduceElementaryMultiply: ReducerCallback<number> =
   reduce(elementaryMultiply)
+const reduceElementaryExponentiate: ReducerCallback<number> = reduce(
+  elementaryExponentiate
+)
 
 export function add(addend: number): NumberCallback
 export function add(...addends: number[]): number
@@ -53,4 +60,13 @@ export function remainder(a: number): NumberCallback
 export function remainder(a: number, b: number): number
 export function remainder(a: number, b?: number): NumberOrCallback {
   return isNumber(b) ? b % a : (c: number): number => c % a
+}
+
+export function exponentiate(base: number): NumberCallback
+export function exponentiate(base: number, ...exponents: number[]): number
+export function exponentiate(...exponents: number[]): NumberOrCallback {
+  return length(exponents) === 1
+    ? (exponent: number): number =>
+        elementaryExponentiate(head(exponents), exponent)
+    : reduceElementaryExponentiate(exponents)
 }
