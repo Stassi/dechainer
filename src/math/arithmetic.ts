@@ -1,37 +1,24 @@
-import type { NumberCallback, ReducerCallback } from '../functions'
+import type { NumberCallback } from '../functions'
 import { head } from '../arrayAccessors'
 import { isNumber } from '../typePredicates'
 import length from '../length'
 import { reduce } from '../iteration'
 import { negate, reciprocal } from './inversions'
 
+type BinaryOperation<T> = (x: T, y: T) => T
+type BinaryNumberOperation = BinaryOperation<number>
+
 type NumberOrCallback = number | NumberCallback
-
-function elementaryAdd(x: number, y: number): number {
-  return x + y
-}
-
-function elementaryMultiply(x: number, y: number): number {
-  return x * y
-}
-
-function elementaryExponentiate(base: number, exponent: number): number {
-  return base ** exponent
-}
-
-const reduceElementaryAdd: ReducerCallback<number> = reduce(elementaryAdd)
-const reduceElementaryMultiply: ReducerCallback<number> =
-  reduce(elementaryMultiply)
-const reduceElementaryExponentiate: ReducerCallback<number> = reduce(
-  elementaryExponentiate
-)
 
 export function add(addend: number): NumberCallback
 export function add(...addends: number[]): number
-export function add(...addends: number[]): NumberOrCallback {
-  return length(addends) === 1
-    ? (n: number): number => elementaryAdd(head(addends), n)
-    : reduceElementaryAdd(addends)
+export function add(...n: number[]): NumberOrCallback {
+  const operation: BinaryNumberOperation = (x: number, y: number): number =>
+    x + y
+
+  return length(n) === 1
+    ? (x: number): number => operation(head(n), x)
+    : reduce(operation)(n)
 }
 
 export function subtract(a: number): NumberCallback
@@ -43,10 +30,13 @@ export function subtract(a: number, b?: number): NumberOrCallback {
 
 export function multiply(factor: number): NumberCallback
 export function multiply(...factors: number[]): number
-export function multiply(...factors: number[]): NumberOrCallback {
-  return length(factors) === 1
-    ? (n: number): number => elementaryMultiply(head(factors), n)
-    : reduceElementaryMultiply(factors)
+export function multiply(...n: number[]): NumberOrCallback {
+  const operation: BinaryNumberOperation = (x: number, y: number): number =>
+    x * y
+
+  return length(n) === 1
+    ? (x: number): number => operation(head(n), x)
+    : reduce(operation)(n)
 }
 
 export function divide(a: number): NumberCallback
@@ -64,9 +54,11 @@ export function remainder(a: number, b?: number): NumberOrCallback {
 
 export function exponentiate(base: number): NumberCallback
 export function exponentiate(base: number, ...exponents: number[]): number
-export function exponentiate(...exponents: number[]): NumberOrCallback {
-  return length(exponents) === 1
-    ? (exponent: number): number =>
-        elementaryExponentiate(head(exponents), exponent)
-    : reduceElementaryExponentiate(exponents)
+export function exponentiate(...n: number[]): NumberOrCallback {
+  const operation: BinaryNumberOperation = (x: number, y: number): number =>
+    x ** y
+
+  return length(n) === 1
+    ? (x: number): number => operation(head(n), x)
+    : reduce(operation)(n)
 }
