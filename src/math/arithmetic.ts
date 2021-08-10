@@ -1,12 +1,16 @@
-import type { Callback, NumberBinaryCallback } from '../functions'
+import type {
+  MapCallback,
+  NumberBinaryCallback,
+  NumberCurriedCallback,
+} from '../functions'
 import hyperoperation from './hyperoperation'
 import { map } from '../iteration'
 import { negate, reciprocal } from './inversions'
 
-type Hyperoperation = ReturnType<typeof hyperoperation>
-type MapHyperoperation = Callback<NumberBinaryCallback[], Hyperoperation[]>
-
-const mapHyperoperation: MapHyperoperation = map(hyperoperation)
+const mapHyperoperation: MapCallback<
+  NumberBinaryCallback,
+  NumberCurriedCallback
+> = map(hyperoperation)
 
 export const [
   add,
@@ -15,7 +19,7 @@ export const [
   divide,
   exponentiate,
   remainder,
-]: Hyperoperation[] = mapHyperoperation([
+]: NumberCurriedCallback[] = mapHyperoperation([
   (x: number, y: number): number => x + y,
   (x: number, y: number): number => negate(x) + y,
   (x: number, y: number): number => x * y,
