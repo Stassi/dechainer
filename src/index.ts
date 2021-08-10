@@ -1,6 +1,8 @@
 import type {
   Callback,
+  IdentityBinaryCallback,
   IdentityCallback,
+  NumberBinaryCallback,
   NumberCallback,
   ReducerCallback,
 } from './functions'
@@ -27,6 +29,7 @@ export {
   decrement,
   divide,
   identity,
+  IdentityBinaryCallback,
   IdentityCallback,
   increment,
   isNumber,
@@ -34,6 +37,7 @@ export {
   floor,
   multiply,
   negate,
+  NumberBinaryCallback,
   NumberCallback,
   reciprocal,
   ReducerCallback,
