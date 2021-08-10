@@ -172,18 +172,18 @@ describe('arithmetic', () => {
         })
       })
 
-      describe('remainder', () => {
-        it('should return the remainder of two numbers', () => {
-          expect(remainder(x)(y)).toBe(expectedRemainder)
-          expect(remainder(x, y)).toBe(expectedRemainder)
-        })
-      })
-
       describe('exponentiate', () => {
         it('should return the base raised to the power of the exponent', () => {
           expect(exponentiate(x)(y)).toBe(expectedPower)
           expect(exponentiate(x, y)).toBe(expectedPower)
           expect(exponentiate(x, y, 1)).toBe(expectedPower)
+        })
+      })
+
+      describe('remainder', () => {
+        it('should return the remainder of two numbers', () => {
+          expect(remainder(x)(y)).toBe(expectedRemainder)
+          expect(remainder(x, y)).toBe(expectedRemainder)
         })
       })
     }
