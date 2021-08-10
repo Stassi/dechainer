@@ -2,8 +2,10 @@ import type {
   Callback,
   IdentityBinaryCallback,
   IdentityCallback,
+  MapCallback,
   NumberBinaryCallback,
   NumberCallback,
+  NumberCurriedCallback,
   ReducerCallback,
 } from './functions'
 import { identity } from './functions'
@@ -37,8 +39,10 @@ export {
   floor,
   multiply,
   negate,
+  MapCallback,
   NumberBinaryCallback,
   NumberCallback,
+  NumberCurriedCallback,
   reciprocal,
   ReducerCallback,
   remainder,
