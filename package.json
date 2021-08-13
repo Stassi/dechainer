@@ -4,7 +4,8 @@
   "description": "Functional utilities.",
   "keywords": [
     "arithmetic",
-    "functional programming"
+    "functional programming",
+    "iteration"
   ],
   "homepage": "https://github.com/Stassi/dechainer#readme",
   "license": "MIT",
