@@ -1,5 +1,6 @@
 import type {
   Callback,
+  CallbackOptional,
   IdentityBinaryCallback,
   IdentityBinaryCurried,
   IdentityCallback,
@@ -15,6 +16,7 @@ import identity from './identity'
 
 export type {
   Callback,
+  CallbackOptional,
   IdentityBinaryCallback,
   IdentityBinaryCurried,
   IdentityCallback,
