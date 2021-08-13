@@ -1,4 +1,5 @@
 export type Callback<I, O> = (x: I) => O
+export type CallbackOptional<I, O> = (x?: I) => O
 
 export type IdentityCallback<T> = Callback<T, T>
 export type IdentityBinaryCallback<T> = (x: T, y: T) => T
