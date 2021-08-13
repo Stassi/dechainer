@@ -1,6 +1,6 @@
 {
   "name": "dechainer",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "Functional utilities.",
   "keywords": [
     "functional programming"
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@skypack/package-check": "^0.2.2",
-    "@types/jest": "^27.0.0",
+    "@types/jest": "^27.0.1",
     "jest": "^27.0.5",
     "prettier": "2.3.2",
     "rollup": "^2.56.2",

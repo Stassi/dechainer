@@ -1,29 +1,48 @@
 import type {
   MapCallback,
   NumberBinaryCallback,
-  NumberCurriedCallback,
+  NumberBinaryCurried,
+  NumberNaryCurried,
 } from '../functions'
-import hyperoperation from './hyperoperation'
-import { map } from '../iteration'
+import { head } from '../arrayAccessors'
+import length from '../length'
 import { negate, reciprocal } from './inversions'
+import { map, reduce } from '../iteration'
 
-const mapHyperoperation: MapCallback<
+const mapNAryOperation: MapCallback<NumberBinaryCallback, NumberNaryCurried> =
+  map(
+    (operation: NumberBinaryCallback): NumberNaryCurried =>
+      <NumberNaryCurried>(
+        ((...n: number[]) =>
+          length(n) === 1
+            ? (x: number): number => operation(head(n), x)
+            : reduce(operation)(n))
+      )
+  )
+
+export const [add, multiply, exponentiate]: NumberNaryCurried[] =
+  mapNAryOperation([
+    (x: number, y: number): number => x + y,
+    (x: number, y: number): number => x * y,
+    (x: number, y: number): number => x ** y,
+  ])
+
+const mapBinaryOperation: MapCallback<
   NumberBinaryCallback,
-  NumberCurriedCallback
-> = map(hyperoperation)
+  NumberBinaryCurried
+> = map(
+  (operation: NumberBinaryCallback): NumberBinaryCurried =>
+    <NumberBinaryCurried>(
+      ((...n: number[]) =>
+        length(n) === 1
+          ? (x: number): number => operation(head(n), x)
+          : reduce(operation)(n))
+    )
+)
 
-export const [
-  add,
-  subtract,
-  multiply,
-  divide,
-  exponentiate,
-  remainder,
-]: NumberCurriedCallback[] = mapHyperoperation([
-  (x: number, y: number): number => x + y,
-  (x: number, y: number): number => negate(x) + y,
-  (x: number, y: number): number => x * y,
-  (x: number, y: number): number => reciprocal(x) * y,
-  (x: number, y: number): number => x ** y,
-  (x: number, y: number): number => y % x,
-])
+export const [subtract, divide, remainder]: NumberBinaryCurried[] =
+  mapBinaryOperation([
+    (x: number, y: number): number => y + negate(x),
+    (x: number, y: number): number => y * reciprocal(x),
+    (x: number, y: number): number => y % x,
+  ])

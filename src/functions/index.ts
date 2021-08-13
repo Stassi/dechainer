@@ -1,12 +1,14 @@
 import type {
   Callback,
   IdentityBinaryCallback,
+  IdentityBinaryCurried,
   IdentityCallback,
-  IdentityCurriedCallback,
+  IdentityNaryCurried,
   MapCallback,
   NumberBinaryCallback,
+  NumberBinaryCurried,
   NumberCallback,
-  NumberCurriedCallback,
+  NumberNaryCurried,
   ReducerCallback,
 } from './Callback'
 import identity from './identity'
@@ -14,12 +16,14 @@ import identity from './identity'
 export type {
   Callback,
   IdentityBinaryCallback,
+  IdentityBinaryCurried,
   IdentityCallback,
-  IdentityCurriedCallback,
+  IdentityNaryCurried,
   MapCallback,
   NumberBinaryCallback,
+  NumberBinaryCurried,
   NumberCallback,
-  NumberCurriedCallback,
+  NumberNaryCurried,
   ReducerCallback,
 }
 export { identity }

@@ -142,48 +142,52 @@ describe('arithmetic', () => {
         sum: number
       }
     }) => {
-      describe('add', () => {
-        it('should return the sum of two numbers', () => {
-          expect(add(x)(y)).toBe(expectedSum)
-          expect(add(x, y)).toBe(expectedSum)
-          expect(add(0, x, y)).toBe(expectedSum)
+      describe('hyperoperations (0, 3]', () => {
+        describe('add', () => {
+          it('should return the sum of two numbers', () => {
+            expect(add(x)(y)).toBe(expectedSum)
+            expect(add(x, y)).toBe(expectedSum)
+            expect(add(x, y, 0)).toBe(expectedSum)
+          })
+        })
+
+        describe('multiply', () => {
+          it('should return the product of two numbers', () => {
+            expect(multiply(x)(y)).toBe(expectedProduct)
+            expect(multiply(x, y)).toBe(expectedProduct)
+            expect(multiply(x, y, 1)).toBe(expectedProduct)
+          })
+        })
+
+        describe('exponentiate', () => {
+          it('should return the base raised to the power of the exponent', () => {
+            expect(exponentiate(x)(y)).toBe(expectedPower)
+            expect(exponentiate(x, y)).toBe(expectedPower)
+            expect(exponentiate(x, y, 1)).toBe(expectedPower)
+          })
         })
       })
 
-      describe('subtract', () => {
-        it('should return the difference between two numbers', () => {
-          expect(subtract(x)(y)).toBe(expectedDifference)
-          expect(subtract(x, y)).toBe(expectedDifference)
+      describe('inverse operations', () => {
+        describe('subtract', () => {
+          it('should return the difference between two numbers', () => {
+            expect(subtract(x)(y)).toBe(expectedDifference)
+            expect(subtract(x, y)).toBe(expectedDifference)
+          })
         })
-      })
 
-      describe('multiply', () => {
-        it('should return the product of two numbers', () => {
-          expect(multiply(x)(y)).toBe(expectedProduct)
-          expect(multiply(x, y)).toBe(expectedProduct)
-          expect(multiply(1, x, y)).toBe(expectedProduct)
+        describe('divide', () => {
+          it('should return the quotient of two numbers', () => {
+            expect(divide(x)(y)).toStrictEqual(expectedQuotient)
+            expect(divide(x, y)).toStrictEqual(expectedQuotient)
+          })
         })
-      })
 
-      describe('divide', () => {
-        it('should return the quotient of two numbers', () => {
-          expect(divide(x)(y)).toStrictEqual(expectedQuotient)
-          expect(divide(x, y)).toStrictEqual(expectedQuotient)
-        })
-      })
-
-      describe('exponentiate', () => {
-        it('should return the base raised to the power of the exponent', () => {
-          expect(exponentiate(x)(y)).toBe(expectedPower)
-          expect(exponentiate(x, y)).toBe(expectedPower)
-          expect(exponentiate(x, y, 1)).toBe(expectedPower)
-        })
-      })
-
-      describe('remainder', () => {
-        it('should return the remainder of two numbers', () => {
-          expect(remainder(x)(y)).toBe(expectedRemainder)
-          expect(remainder(x, y)).toBe(expectedRemainder)
+        describe('remainder', () => {
+          it('should return the remainder of two numbers', () => {
+            expect(remainder(x)(y)).toBe(expectedRemainder)
+            expect(remainder(x, y)).toBe(expectedRemainder)
+          })
         })
       })
     }
