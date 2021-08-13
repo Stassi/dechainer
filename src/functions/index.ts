@@ -10,7 +10,7 @@ import type {
   NumberBinaryCurried,
   NumberCallback,
   NumberNaryCurried,
-  ReducerCallback,
+  ReduceCallback,
 } from './Callback'
 import identity from './identity'
 
@@ -26,6 +26,6 @@ export type {
   NumberBinaryCurried,
   NumberCallback,
   NumberNaryCurried,
-  ReducerCallback,
+  ReduceCallback,
 }
 export { identity }

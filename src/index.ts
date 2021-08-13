@@ -9,7 +9,7 @@ import type {
   NumberBinaryCurried,
   NumberCallback,
   NumberNaryCurried,
-  ReducerCallback,
+  ReduceCallback,
 } from './functions'
 import { identity } from './functions'
 import { isNumber, isString } from './typePredicates'
@@ -52,7 +52,7 @@ export {
   NumberCallback,
   NumberNaryCurried,
   reciprocal,
-  ReducerCallback,
+  ReduceCallback,
   remainder,
   subtract,
 }

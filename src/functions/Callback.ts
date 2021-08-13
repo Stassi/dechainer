@@ -2,7 +2,7 @@ export type Callback<T, U> = (x: T) => U
 export type CallbackOptional<T, U> = (x?: T) => U
 
 export type MapCallback<T, U> = Callback<T[], U[]>
-export type ReducerCallback<T> = Callback<T[], T>
+export type ReduceCallback<T> = Callback<T[], T>
 
 export type IdentityCallback<T> = Callback<T, T>
 export type IdentityBinaryCallback<T> = (x: T, y: T) => T
