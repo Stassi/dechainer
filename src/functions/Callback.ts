@@ -1,7 +1,12 @@
-export type Callback<I, O> = (x: I) => O
+export type Callback<T, U> = (x: T) => U
+export type CallbackOptional<T, U> = (x?: T) => U
+
+export type MapCallback<T, U> = Callback<T[], U[]>
+export type ReduceCallback<T> = Callback<T[], T>
 
 export type IdentityCallback<T> = Callback<T, T>
 export type IdentityBinaryCallback<T> = (x: T, y: T) => T
+export type IdentityMapCallback<T> = MapCallback<T, T>
 
 export type IdentityCurried<T> = {
   (x: T): IdentityCallback<T>
@@ -11,14 +16,12 @@ export type IdentityBinaryCurried<T> = IdentityCurried<T> & {
   (x: T, y: T): T
 }
 
-export type IdentityNaryCurried<T> = IdentityCurried<T> & {
+export type IdentityNAryCurried<T> = IdentityCurried<T> & {
   (...x: T[]): T
 }
 
 export type NumberCallback = IdentityCallback<number>
 export type NumberBinaryCallback = IdentityBinaryCallback<number>
 export type NumberBinaryCurried = IdentityBinaryCurried<number>
-export type NumberNaryCurried = IdentityNaryCurried<number>
-
-export type MapCallback<I, O> = Callback<I[], O[]>
-export type ReducerCallback<T> = Callback<T[], T>
+export type NumberNAryCurried = IdentityNAryCurried<number>
+export type NumberMapCallback = IdentityMapCallback<number>

@@ -3,16 +3,18 @@ import type {
   IdentityBinaryCallback,
   IdentityBinaryCurried,
   IdentityCallback,
-  IdentityNaryCurried,
+  IdentityMapCallback,
+  IdentityNAryCurried,
   MapCallback,
   NumberBinaryCallback,
   NumberBinaryCurried,
   NumberCallback,
-  NumberNaryCurried,
-  ReducerCallback,
+  NumberMapCallback,
+  NumberNAryCurried,
+  ReduceCallback,
 } from './functions'
 import { identity } from './functions'
-import { isNumber, isString } from './typePredicates'
+import { map, reduce } from './iteration'
 import {
   add,
   ceiling,
@@ -27,6 +29,7 @@ import {
   remainder,
   subtract,
 } from './math'
+import { isNumber, isString } from './typePredicates'
 
 export {
   add,
@@ -39,20 +42,24 @@ export {
   IdentityBinaryCallback,
   IdentityBinaryCurried,
   IdentityCallback,
-  IdentityNaryCurried,
+  IdentityMapCallback,
+  IdentityNAryCurried,
   increment,
   isNumber,
   isString,
   floor,
+  map,
   multiply,
   negate,
   MapCallback,
   NumberBinaryCallback,
   NumberBinaryCurried,
   NumberCallback,
-  NumberNaryCurried,
+  NumberMapCallback,
+  NumberNAryCurried,
   reciprocal,
-  ReducerCallback,
+  reduce,
+  ReduceCallback,
   remainder,
   subtract,
 }

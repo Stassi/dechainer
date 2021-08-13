@@ -1,17 +1,13 @@
-import type { Callback } from './functions'
+import type { MapCallback, ReduceCallback } from './functions'
 
-interface Mapper<I, O> {
-  (value: I, index: number, array: I[]): O
+export function map<T, U>(mapper: {
+  (value: T, index: number, array: T[]): U
+}): MapCallback<T, U> {
+  return (a: T[]): U[] => a.map(mapper)
 }
 
-interface Reducer<T> {
+export function reduce<T>(reducer: {
   (previousValue: T, currentValue: T, currentIndex: number, array: T[]): T
-}
-
-export function map<I, O>(mapper: Mapper<I, O>): Callback<I[], O[]> {
-  return (a: I[]): O[] => a.map(mapper)
-}
-
-export function reduce<T>(reducer: Reducer<T>) {
+}): ReduceCallback<T> {
   return (a: T[]): T => a.reduce(reducer)
 }

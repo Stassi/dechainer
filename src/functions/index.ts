@@ -1,29 +1,35 @@
 import type {
   Callback,
+  CallbackOptional,
   IdentityBinaryCallback,
   IdentityBinaryCurried,
   IdentityCallback,
-  IdentityNaryCurried,
+  IdentityMapCallback,
+  IdentityNAryCurried,
   MapCallback,
   NumberBinaryCallback,
   NumberBinaryCurried,
   NumberCallback,
-  NumberNaryCurried,
-  ReducerCallback,
+  NumberMapCallback,
+  NumberNAryCurried,
+  ReduceCallback,
 } from './Callback'
 import identity from './identity'
 
 export type {
   Callback,
+  CallbackOptional,
   IdentityBinaryCallback,
   IdentityBinaryCurried,
   IdentityCallback,
-  IdentityNaryCurried,
+  IdentityMapCallback,
+  IdentityNAryCurried,
   MapCallback,
   NumberBinaryCallback,
   NumberBinaryCurried,
   NumberCallback,
-  NumberNaryCurried,
-  ReducerCallback,
+  NumberMapCallback,
+  NumberNAryCurried,
+  ReduceCallback,
 }
 export { identity }

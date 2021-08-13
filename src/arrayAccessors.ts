@@ -1,6 +1,6 @@
-import type { ReducerCallback } from './functions'
+import type { ReduceCallback } from './functions'
 
-function atIndex<T>(i: number): ReducerCallback<T> {
+function atIndex<T>(i: number): ReduceCallback<T> {
   return (a: T[]): T => a[i]
 }
 
