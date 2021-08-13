@@ -3,6 +3,7 @@
   "version": "0.1.16",
   "description": "Functional utilities.",
   "keywords": [
+    "arithmetic",
     "functional programming"
   ],
   "homepage": "https://github.com/Stassi/dechainer#readme",
