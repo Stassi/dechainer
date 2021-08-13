@@ -12,18 +12,16 @@ const mapHyperoperation: MapCallback<
   NumberCurriedCallback
 > = map(hyperoperation)
 
-export const [
-  add,
-  subtract,
-  multiply,
-  divide,
-  exponentiate,
-  remainder,
-]: NumberCurriedCallback[] = mapHyperoperation([
-  (x: number, y: number): number => x + y,
-  (x: number, y: number): number => negate(x) + y,
-  (x: number, y: number): number => x * y,
-  (x: number, y: number): number => reciprocal(x) * y,
-  (x: number, y: number): number => x ** y,
-  (x: number, y: number): number => y % x,
-])
+export const [add, multiply, exponentiate]: NumberCurriedCallback[] =
+  mapHyperoperation([
+    (x: number, y: number): number => x + y,
+    (x: number, y: number): number => x * y,
+    (x: number, y: number): number => x ** y,
+  ])
+
+export const [subtract, divide, remainder]: NumberCurriedCallback[] =
+  mapHyperoperation([
+    (x: number, y: number): number => y + negate(x),
+    (x: number, y: number): number => y * reciprocal(x),
+    (x: number, y: number): number => y % x,
+  ])
