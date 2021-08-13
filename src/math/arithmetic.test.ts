@@ -147,7 +147,7 @@ describe('arithmetic', () => {
           it('should return the sum of two numbers', () => {
             expect(add(x)(y)).toBe(expectedSum)
             expect(add(x, y)).toBe(expectedSum)
-            expect(add(0, x, y)).toBe(expectedSum)
+            expect(add(x, y, 0)).toBe(expectedSum)
           })
         })
 
@@ -155,7 +155,7 @@ describe('arithmetic', () => {
           it('should return the product of two numbers', () => {
             expect(multiply(x)(y)).toBe(expectedProduct)
             expect(multiply(x, y)).toBe(expectedProduct)
-            expect(multiply(1, x, y)).toBe(expectedProduct)
+            expect(multiply(x, y, 1)).toBe(expectedProduct)
           })
         })
 
