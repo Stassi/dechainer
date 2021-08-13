@@ -16,12 +16,12 @@ export type IdentityBinaryCurried<T> = IdentityCurried<T> & {
   (x: T, y: T): T
 }
 
-export type IdentityNaryCurried<T> = IdentityCurried<T> & {
+export type IdentityNAryCurried<T> = IdentityCurried<T> & {
   (...x: T[]): T
 }
 
 export type NumberCallback = IdentityCallback<number>
 export type NumberBinaryCallback = IdentityBinaryCallback<number>
 export type NumberBinaryCurried = IdentityBinaryCurried<number>
-export type NumberNaryCurried = IdentityNaryCurried<number>
+export type NumberNAryCurried = IdentityNAryCurried<number>
 export type NumberMapCallback = IdentityMapCallback<number>

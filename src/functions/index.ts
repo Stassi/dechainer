@@ -5,13 +5,13 @@ import type {
   IdentityBinaryCurried,
   IdentityCallback,
   IdentityMapCallback,
-  IdentityNaryCurried,
+  IdentityNAryCurried,
   MapCallback,
   NumberBinaryCallback,
   NumberBinaryCurried,
   NumberCallback,
   NumberMapCallback,
-  NumberNaryCurried,
+  NumberNAryCurried,
   ReduceCallback,
 } from './Callback'
 import identity from './identity'
@@ -23,13 +23,13 @@ export type {
   IdentityBinaryCurried,
   IdentityCallback,
   IdentityMapCallback,
-  IdentityNaryCurried,
+  IdentityNAryCurried,
   MapCallback,
   NumberBinaryCallback,
   NumberBinaryCurried,
   NumberCallback,
   NumberMapCallback,
-  NumberNaryCurried,
+  NumberNAryCurried,
   ReduceCallback,
 }
 export { identity }
