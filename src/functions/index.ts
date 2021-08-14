@@ -1,5 +1,7 @@
 import type {
   Callback,
+  CallbackBinary,
+  CallbackCurried,
   CallbackOptional,
   IdentityBinaryCallback,
   IdentityBinaryCurried,
@@ -18,6 +20,8 @@ import identity from './identity'
 
 export type {
   Callback,
+  CallbackBinary,
+  CallbackCurried,
   CallbackOptional,
   IdentityBinaryCallback,
   IdentityBinaryCurried,
