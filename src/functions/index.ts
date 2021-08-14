@@ -16,6 +16,7 @@ import type {
   NumberNAryCurried,
   ReduceCallback,
 } from './Callback'
+import curryBinary from './curryBinary'
 import identity from './identity'
 
 export type {
@@ -36,4 +37,4 @@ export type {
   NumberNAryCurried,
   ReduceCallback,
 }
-export { identity }
+export { curryBinary, identity }
