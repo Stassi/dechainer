@@ -1,5 +1,8 @@
 import type {
   Callback,
+  CallbackBinary,
+  CallbackCurried,
+  CallbackOptional,
   IdentityBinaryCallback,
   IdentityBinaryCurried,
   IdentityCallback,
@@ -34,6 +37,9 @@ import { isNumber, isString } from './typePredicates'
 export {
   add,
   Callback,
+  CallbackBinary,
+  CallbackCurried,
+  CallbackOptional,
   ceiling,
   decrement,
   divide,

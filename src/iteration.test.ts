@@ -30,6 +30,7 @@ describe('iteration', () => {
       }) => {
         it(`should return ${name}ed values`, () => {
           expect(map(mapper)(input)).toStrictEqual(expected)
+          expect(map(mapper, input)).toStrictEqual(expected)
         })
       }
     )
@@ -60,6 +61,7 @@ describe('iteration', () => {
       }) => {
         it(`should return ${name}ed values`, () => {
           expect(reduce(reducer)(input)).toBe(expected)
+          expect(reduce(reducer, input)).toBe(expected)
         })
       }
     )

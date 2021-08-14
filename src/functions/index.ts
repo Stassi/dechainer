@@ -1,5 +1,7 @@
 import type {
   Callback,
+  CallbackBinary,
+  CallbackCurried,
   CallbackOptional,
   IdentityBinaryCallback,
   IdentityBinaryCurried,
@@ -14,10 +16,13 @@ import type {
   NumberNAryCurried,
   ReduceCallback,
 } from './Callback'
+import curryBinary from './curryBinary'
 import identity from './identity'
 
 export type {
   Callback,
+  CallbackBinary,
+  CallbackCurried,
   CallbackOptional,
   IdentityBinaryCallback,
   IdentityBinaryCurried,
@@ -32,4 +37,4 @@ export type {
   NumberNAryCurried,
   ReduceCallback,
 }
-export { identity }
+export { curryBinary, identity }
