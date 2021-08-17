@@ -133,14 +133,10 @@ describe('arithmetic', () => {
     }: {
       x: number
       y: number
-      expected: {
-        difference: number
-        power: number
-        product: number
-        quotient: number
-        remainder: number
-        sum: number
-      }
+      expected: Record<
+        'difference' | 'power' | 'product' | 'quotient' | 'remainder' | 'sum',
+        number
+      >
     }) => {
       describe('hyperoperations (0, 3]', () => {
         describe('add', () => {
