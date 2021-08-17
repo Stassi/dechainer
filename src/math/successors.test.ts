@@ -44,10 +44,7 @@ describe('successors', () => {
       expected: { next: expectedNext, previous: expectedPrevious },
     }: {
       input: number
-      expected: {
-        next: number
-        previous: number
-      }
+      expected: Record<'next' | 'previous', number>
     }) => {
       describe('decrement', () => {
         it('should return the previous successive integer', () => {
