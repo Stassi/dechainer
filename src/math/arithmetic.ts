@@ -16,7 +16,7 @@ const mapNAryOperation: MapCallback<NumberBinaryCallback, NumberNAryCurried> =
         ((...n: number[]) =>
           length(n) === 1
             ? (x: number): number => operation(head(n), x)
-            : reduce(operation)(n))
+            : reduce(operation, n))
       )
   )
 
@@ -36,7 +36,7 @@ const mapBinaryOperation: MapCallback<
       ((...n: number[]) =>
         length(n) === 1
           ? (x: number): number => operation(head(n), x)
-          : reduce(operation)(n))
+          : reduce(operation, n))
     )
 )
 
