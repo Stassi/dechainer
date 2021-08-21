@@ -44,10 +44,7 @@ describe('rounding', () => {
       expected: { ceiling: expectedCeiling, floor: expectedFloor },
     }: {
       input: number
-      expected: {
-        ceiling: number
-        floor: number
-      }
+      expected: Record<'ceiling' | 'floor', number>
     }) => {
       describe('ceiling', () => {
         it('should round a number up to the next largest integer', () => {

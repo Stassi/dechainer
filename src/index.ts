@@ -14,6 +14,7 @@ import type {
   NumberCallback,
   NumberMapCallback,
   NumberNAryCurried,
+  Predicate,
   ReduceCallback,
 } from './functions'
 import { identity } from './functions'
@@ -32,7 +33,7 @@ import {
   remainder,
   subtract,
 } from './math'
-import { isNumber, isString } from './typePredicates'
+import { every, isEven, isNumber, isOdd, isString, some } from './predicates'
 
 export {
   add,
@@ -43,6 +44,7 @@ export {
   ceiling,
   decrement,
   divide,
+  every,
   exponentiate,
   identity,
   IdentityBinaryCallback,
@@ -51,7 +53,9 @@ export {
   IdentityMapCallback,
   IdentityNAryCurried,
   increment,
+  isEven,
   isNumber,
+  isOdd,
   isString,
   floor,
   map,
@@ -65,7 +69,9 @@ export {
   NumberNAryCurried,
   reciprocal,
   reduce,
+  Predicate,
   ReduceCallback,
   remainder,
+  some,
   subtract,
 }

@@ -37,10 +37,7 @@ describe('inversions', () => {
       expected: { negative: expectedNegative, reciprocal: expectedReciprocal },
     }: {
       input: number
-      expected: {
-        negative: number
-        reciprocal: number
-      }
+      expected: Record<'negative' | 'reciprocal', number>
     }) => {
       describe('negate', () => {
         it('should return the additive inverse', () => {

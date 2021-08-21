@@ -27,3 +27,5 @@ export type NumberBinaryCallback = IdentityBinaryCallback<number>
 export type NumberBinaryCurried = IdentityBinaryCurried<number>
 export type NumberNAryCurried = IdentityNAryCurried<number>
 export type NumberMapCallback = IdentityMapCallback<number>
+
+export type Predicate<T> = Callback<T, boolean>
