@@ -1,4 +1,4 @@
-import type { Callback, Predicate } from './functions'
+import type { Callback, Predicate } from '../functions'
 
 export function every<T>(predicate: Predicate<T>): Predicate<T[]>
 export function every<T>(predicate: Predicate<T>, x: T[]): boolean

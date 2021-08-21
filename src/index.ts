@@ -18,7 +18,6 @@ import type {
   ReduceCallback,
 } from './functions'
 import { identity } from './functions'
-import { every, some } from './arrayPredicates'
 import { map, reduce } from './iteration'
 import {
   add,
@@ -34,8 +33,7 @@ import {
   remainder,
   subtract,
 } from './math'
-import { isEven, isOdd } from './parityPredicates'
-import { isNumber, isString } from './typePredicates'
+import { every, isEven, isNumber, isOdd, isString, some } from './predicates'
 
 export {
   add,
