@@ -2,6 +2,7 @@ import type {
   MapCallback,
   NumberBinaryCallback,
   NumberBinaryCurried,
+  NumberCallback,
   NumberNAryCurried,
 } from '../functions'
 import { head } from '../arrayAccessors'
@@ -40,9 +41,13 @@ const mapBinaryOperation: MapCallback<
     )
 )
 
-export const [subtract, divide, remainder]: NumberBinaryCurried[] =
+export const [subtract, divide, remainder, modulo]: NumberBinaryCurried[] =
   mapBinaryOperation([
     (x: number, y: number): number => y + negate(x),
     (x: number, y: number): number => y * reciprocal(x),
     (x: number, y: number): number => y % x,
+    (x: number, y: number): number => {
+      const divideFirstParam: NumberCallback = remainder(x)
+      return divideFirstParam(add(x, divideFirstParam(y)))
+    },
   ])

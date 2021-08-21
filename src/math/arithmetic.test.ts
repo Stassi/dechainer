@@ -2,6 +2,7 @@ import {
   add,
   divide,
   exponentiate,
+  modulo,
   multiply,
   remainder,
   subtract,
@@ -14,6 +15,7 @@ describe('arithmetic', () => {
       y: 0,
       expected: {
         difference: 0,
+        modulo: NaN,
         power: 1,
         product: 0,
         quotient: NaN,
@@ -26,6 +28,7 @@ describe('arithmetic', () => {
       y: 0,
       expected: {
         difference: 1,
+        modulo: -0,
         power: 1,
         product: -0,
         quotient: -0,
@@ -38,6 +41,7 @@ describe('arithmetic', () => {
       y: -1,
       expected: {
         difference: 0,
+        modulo: -0,
         power: -1,
         product: 1,
         quotient: 1,
@@ -50,6 +54,7 @@ describe('arithmetic', () => {
       y: 0,
       expected: {
         difference: -1,
+        modulo: 0,
         power: 1,
         product: 0,
         quotient: 0,
@@ -62,6 +67,7 @@ describe('arithmetic', () => {
       y: 1,
       expected: {
         difference: 1,
+        modulo: NaN,
         power: 0,
         product: 0,
         quotient: Infinity,
@@ -74,6 +80,7 @@ describe('arithmetic', () => {
       y: 0.5,
       expected: {
         difference: 0,
+        modulo: 0,
         power: 0.7071067811865476,
         product: 0.25,
         quotient: 1,
@@ -86,6 +93,7 @@ describe('arithmetic', () => {
       y: 1,
       expected: {
         difference: 0,
+        modulo: 0,
         power: 1,
         product: 1,
         quotient: 1,
@@ -98,6 +106,7 @@ describe('arithmetic', () => {
       y: 3,
       expected: {
         difference: 1,
+        modulo: 1,
         power: 8,
         product: 6,
         quotient: 1.5,
@@ -110,6 +119,7 @@ describe('arithmetic', () => {
       y: 2,
       expected: {
         difference: -1,
+        modulo: 2,
         power: 9,
         product: 6,
         quotient: 0.6666666666666666,
@@ -124,6 +134,7 @@ describe('arithmetic', () => {
       y,
       expected: {
         difference: expectedDifference,
+        modulo: expectedModulo,
         power: expectedPower,
         product: expectedProduct,
         quotient: expectedQuotient,
@@ -134,7 +145,13 @@ describe('arithmetic', () => {
       x: number
       y: number
       expected: Record<
-        'difference' | 'power' | 'product' | 'quotient' | 'remainder' | 'sum',
+        | 'difference'
+        | 'modulo'
+        | 'power'
+        | 'product'
+        | 'quotient'
+        | 'remainder'
+        | 'sum',
         number
       >
     }) => {
@@ -183,6 +200,13 @@ describe('arithmetic', () => {
           it('should return the remainder of two numbers', () => {
             expect(remainder(x)(y)).toBe(expectedRemainder)
             expect(remainder(x, y)).toBe(expectedRemainder)
+          })
+        })
+
+        describe('modulo', () => {
+          it('should return the modulo of two numbers', () => {
+            expect(modulo(x)(y)).toBe(expectedModulo)
+            expect(modulo(x, y)).toBe(expectedModulo)
           })
         })
       })
