@@ -14,6 +14,7 @@ import type {
   NumberCallback,
   NumberMapCallback,
   NumberNAryCurried,
+  Predicate,
   ReduceCallback,
 } from './Callback'
 import curryBinary from './curryBinary'
@@ -35,6 +36,7 @@ export type {
   NumberCallback,
   NumberMapCallback,
   NumberNAryCurried,
+  Predicate,
   ReduceCallback,
 }
 export { curryBinary, identity }
