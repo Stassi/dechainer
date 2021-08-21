@@ -46,7 +46,7 @@ describe('predicates', () => {
         },
       },
     ])(
-      '$input',
+      'input: $input',
       ({
         expected,
         input,
@@ -156,7 +156,7 @@ describe('predicates', () => {
         },
       },
     ])(
-      '$input',
+      'input: $input',
       ({
         expected,
         input,
