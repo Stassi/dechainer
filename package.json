@@ -5,7 +5,8 @@
   "keywords": [
     "arithmetic",
     "functional programming",
-    "iteration"
+    "iteration",
+    "predicates"
   ],
   "homepage": "https://github.com/Stassi/dechainer#readme",
   "license": "MIT",
