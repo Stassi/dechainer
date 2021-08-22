@@ -1,12 +1,15 @@
-import type { NumberCallback } from '../functions'
-import { absolute, remainder } from '../math'
+import type { NumberCallback, NumberPredicate, Predicate } from '../functions'
+import { map } from '../iteration'
+import { modulo } from '../math'
+import { strictEquality } from '../logic'
 
-const remainderTwo: NumberCallback = remainder(2)
+const modulo2: NumberCallback = modulo(2)
 
-export function isEven(x: number): boolean {
-  return absolute(remainderTwo(x)) !== 1
-}
+const mapStrictEquality: <T>(x: T[]) => Predicate<T>[] = map(strictEquality)
 
-export function isOdd(x: number): boolean {
-  return absolute(remainderTwo(x)) === 1
-}
+export const [isEven, isOdd]: NumberPredicate[] = map(
+  (x: NumberPredicate): NumberPredicate =>
+    (y: number): boolean =>
+      x(modulo2(y)),
+  mapStrictEquality([0, 1])
+)

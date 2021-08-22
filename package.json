@@ -1,11 +1,12 @@
 {
   "name": "dechainer",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Functional utilities.",
   "keywords": [
     "arithmetic",
     "functional programming",
-    "iteration"
+    "iteration",
+    "predicates"
   ],
   "homepage": "https://github.com/Stassi/dechainer#readme",
   "license": "MIT",

@@ -22,10 +22,12 @@ export type IdentityNAryCurried<T> = IdentityCurried<T> & {
   (...x: T[]): T
 }
 
+export type Predicate<T> = Callback<T, boolean>
+
 export type NumberCallback = IdentityCallback<number>
 export type NumberBinaryCallback = IdentityBinaryCallback<number>
 export type NumberBinaryCurried = IdentityBinaryCurried<number>
 export type NumberNAryCurried = IdentityNAryCurried<number>
 export type NumberMapCallback = IdentityMapCallback<number>
 
-export type Predicate<T> = Callback<T, boolean>
+export type NumberPredicate = Predicate<number>
