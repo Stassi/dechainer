@@ -1,7 +1,7 @@
 import type { NumberCallback, NumberPredicate, Predicate } from '../functions'
 import { map } from '../iteration'
 import { modulo } from '../math'
-import strictEquality from './strictEquality'
+import { strictEquality } from '../logic'
 
 const modulo2: NumberCallback = modulo(2)
 
