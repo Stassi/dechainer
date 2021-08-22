@@ -36,6 +36,7 @@ import {
   remainder,
   subtract,
 } from './math'
+import { entries, fromEntries } from './objectEntries'
 import { every, isEven, isNumber, isOdd, isString, some } from './predicates'
 
 export {
@@ -47,8 +48,10 @@ export {
   ceiling,
   decrement,
   divide,
+  entries,
   every,
   exponentiate,
+  fromEntries,
   identity,
   IdentityBinaryCallback,
   IdentityBinaryCurried,
