@@ -14,10 +14,12 @@ import type {
   NumberCallback,
   NumberMapCallback,
   NumberNAryCurried,
+  NumberPredicate,
   Predicate,
   ReduceCallback,
 } from './functions'
 import { identity } from './functions'
+import { not } from './logic'
 import { map, reduce } from './iteration'
 import {
   add,
@@ -64,11 +66,13 @@ export {
   multiply,
   negate,
   MapCallback,
+  not,
   NumberBinaryCallback,
   NumberBinaryCurried,
   NumberCallback,
   NumberMapCallback,
   NumberNAryCurried,
+  NumberPredicate,
   reciprocal,
   reduce,
   Predicate,

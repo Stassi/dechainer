@@ -14,6 +14,7 @@ import type {
   NumberCallback,
   NumberMapCallback,
   NumberNAryCurried,
+  NumberPredicate,
   Predicate,
   ReduceCallback,
 } from './Callback'
@@ -36,6 +37,7 @@ export type {
   NumberCallback,
   NumberMapCallback,
   NumberNAryCurried,
+  NumberPredicate,
   Predicate,
   ReduceCallback,
 }
