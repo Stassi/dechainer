@@ -19,8 +19,8 @@ import type {
   ReduceCallback,
 } from './functions'
 import { identity } from './functions'
-import { not } from './logic'
 import { map, reduce } from './iteration'
+import { not, strictEquality } from './logic'
 import {
   add,
   ceiling,
@@ -79,5 +79,6 @@ export {
   ReduceCallback,
   remainder,
   some,
+  strictEquality,
   subtract,
 }
