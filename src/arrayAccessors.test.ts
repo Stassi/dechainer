@@ -1,19 +1,15 @@
-import { atIndex, head } from './arrayAccessors'
+import { atIndex } from './arrayAccessors'
+
+type NumberOrString = number | string
 
 describe('array accessors', () => {
   describe.each([
     {
-      expected: {
-        head: 0,
-        neck: 1,
-      },
+      expected: [0, 1],
       input: [0, 1, 2],
     },
     {
-      expected: {
-        head: 'a',
-        neck: 'b',
-      },
+      expected: ['a', 'b'],
       input: ['a', 'b', 'c'],
     },
   ])(
@@ -22,35 +18,16 @@ describe('array accessors', () => {
       expected,
       input,
     }: {
-      expected: Record<'head' | 'neck', number | string>
-      input: (number | string)[]
+      expected: NumberOrString[]
+      input: NumberOrString[]
     }) => {
-      describe.each([
-        {
-          accessor: head,
-          name: 'head',
-        },
-        {
-          accessor: atIndex(1),
-          name: 'neck',
-        },
-      ])(
-        '$name',
-        ({
-          accessor,
-          name,
-        }: {
-          accessor: (<T>(a: T[]) => T) | ((x: unknown[]) => unknown)
-          name: string
-        }) => {
-          const expectedElement: number | string =
-            expected[<keyof typeof expected>name]
+      describe.each([0, 1])('index: %i', (n: number) => {
+        const expectedElement: NumberOrString = expected[n]
 
-          it(`should return an element at a given index: ${expectedElement}`, () => {
-            expect(accessor(input)).toBe(expectedElement)
-          })
-        }
-      )
+        it(`should be element: ${expectedElement}`, () => {
+          expect(atIndex(n)(input)).toBe(expectedElement)
+        })
+      })
     }
   )
 })
