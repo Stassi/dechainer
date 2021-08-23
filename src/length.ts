@@ -1,5 +1,3 @@
-type ArrayOrString = any[] | string
-
-export default function length(x: ArrayOrString): number {
+export default function length(x: Record<'length', number>): number {
   return x.length
 }

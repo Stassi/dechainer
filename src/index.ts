@@ -19,6 +19,7 @@ import type {
   ReduceCallback,
 } from './functions'
 import { identity } from './functions'
+import length from './length'
 import { map, reduce } from './iteration'
 import { not, strictEquality } from './logic'
 import {
@@ -64,6 +65,7 @@ export {
   isOdd,
   isString,
   floor,
+  length,
   map,
   modulo,
   multiply,
