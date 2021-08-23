@@ -1,4 +1,3 @@
-import absolute from './absolute'
 import {
   add,
   divide,
@@ -13,7 +12,6 @@ import { ceiling, floor } from './rounding'
 import { decrement, increment } from './successors'
 
 export {
-  absolute,
   add,
   ceiling,
   decrement,
