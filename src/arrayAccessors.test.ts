@@ -26,6 +26,7 @@ describe('array accessors', () => {
 
         it(`should be element: ${expectedElement}`, () => {
           expect(atIndex(n)(input)).toBe(expectedElement)
+          expect(atIndex(n, input)).toBe(expectedElement)
         })
       })
     }
