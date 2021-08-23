@@ -20,6 +20,7 @@ import type {
 } from './functions'
 import { identity } from './functions'
 import length from './length'
+import { atIndex, head } from './arrayAccessors'
 import { map, reduce } from './iteration'
 import { not, strictEquality } from './logic'
 import {
@@ -42,6 +43,7 @@ import { every, isEven, isNumber, isOdd, isString, some } from './predicates'
 
 export {
   add,
+  atIndex,
   Callback,
   CallbackBinary,
   CallbackCurried,
@@ -53,6 +55,7 @@ export {
   every,
   exponentiate,
   fromEntries,
+  head,
   identity,
   IdentityBinaryCallback,
   IdentityBinaryCurried,
