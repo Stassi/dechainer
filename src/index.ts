@@ -20,7 +20,7 @@ import type {
 } from './functions'
 import { identity } from './functions'
 import length from './length'
-import { atIndex, head } from './arrayAccessors'
+import { atIndex, head, indexOf } from './arrayAccessors'
 import { map, reduce } from './iteration'
 import { not, strictEquality } from './logic'
 import {
@@ -63,6 +63,7 @@ export {
   IdentityMapCallback,
   IdentityNAryCurried,
   increment,
+  indexOf,
   isEven,
   isNumber,
   isOdd,
