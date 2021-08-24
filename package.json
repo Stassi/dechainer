@@ -3,6 +3,7 @@
   "version": "0.2.9",
   "description": "Functional utilities.",
   "keywords": [
+    "accessors",
     "arithmetic",
     "functional programming",
     "iteration",
