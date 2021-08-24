@@ -1,4 +1,4 @@
-import { atIndex } from './arrayAccessors'
+import { atIndex, indexOf } from './arrayAccessors'
 
 type NumberOrString = number | string
 
@@ -27,6 +27,8 @@ describe('array accessors', () => {
         it(`should be element: ${expectedElement}`, () => {
           expect(atIndex(n)(input)).toBe(expectedElement)
           expect(atIndex(n, input)).toBe(expectedElement)
+          expect(indexOf(input)(n)).toBe(expectedElement)
+          expect(indexOf(input, n)).toBe(expectedElement)
         })
       })
     }
