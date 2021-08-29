@@ -8,6 +8,7 @@ import type {
   IdentityCallback,
   IdentityMapCallback,
   IdentityNAryCurried,
+  ForEachCallback,
   MapCallback,
   NumberBinaryCallback,
   NumberBinaryCurried,
@@ -21,7 +22,7 @@ import type {
 import { identity } from './functions'
 import length from './length'
 import { atIndex, head, indexOf } from './arrayAccessors'
-import { map, reduce } from './iteration'
+import { forEach, map, reduce } from './iteration'
 import { not, strictEquality } from './logic'
 import {
   add,
@@ -54,6 +55,9 @@ export {
   entries,
   every,
   exponentiate,
+  floor,
+  forEach,
+  ForEachCallback,
   fromEntries,
   head,
   identity,
@@ -68,7 +72,6 @@ export {
   isNumber,
   isOdd,
   isString,
-  floor,
   length,
   map,
   modulo,
