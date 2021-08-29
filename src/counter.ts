@@ -1,4 +1,5 @@
 import type { State } from './state'
+import { always } from './functions'
 import { increment } from './math'
 import state from './state'
 
@@ -14,7 +15,7 @@ export default function counter(): Counter {
       set(increment)
     },
     reset(): void {
-      set(() => 0)
+      set(always(0))
     },
   }
 }
