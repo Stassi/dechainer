@@ -74,6 +74,22 @@ describe('iteration', () => {
               expect(count()).toBe(expectedLength)
             })
           })
+
+          describe('flipped, curried', () => {
+            it(`should increment ${expectedLength} times`, () => {
+              forEach(input)(incrementCounter)
+
+              expect(count()).toBe(expectedLength)
+            })
+          })
+
+          describe('flipped, uncurried', () => {
+            it(`should increment ${expectedLength} times`, () => {
+              forEach(input, incrementCounter)
+
+              expect(count()).toBe(expectedLength)
+            })
+          })
         })
       })
 
