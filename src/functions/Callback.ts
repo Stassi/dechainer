@@ -1,3 +1,4 @@
+export type Always<T> = () => T
 export type Callback<T, U> = (x: T) => U
 export type CallbackOptional<T, U> = (x?: T) => U
 export type CallbackBinary<T, U, V> = (x: T, y: U) => V
