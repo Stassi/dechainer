@@ -3,6 +3,7 @@ export type CallbackOptional<T, U> = (x?: T) => U
 export type CallbackBinary<T, U, V> = (x: T, y: U) => V
 export type CallbackCurried<T, U, V> = (a: T) => (b: U) => V
 
+export type ForEachCallback<T> = Callback<T[], void>
 export type MapCallback<T, U> = Callback<T[], U[]>
 export type ReduceCallback<T> = Callback<T[], T>
 
