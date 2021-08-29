@@ -1,7 +1,9 @@
-import type { NumberBinaryCallback, NumberCallback } from './functions'
-import counter from './counter'
-import { forEach, map, reduce } from './iteration'
-import { add, decrement, increment, multiply } from './math'
+import type { NumberBinaryCallback, NumberCallback } from '../functions'
+import counter from '../counter'
+import forEach from './forEach'
+import map from './map'
+import reduce from './reduce'
+import { add, decrement, increment, multiply } from '../math'
 
 type Counter = Record<'count', () => number> &
   Record<'increment' | 'reset', () => void>
