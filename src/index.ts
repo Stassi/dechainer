@@ -19,9 +19,9 @@ import type {
   Predicate,
   ReduceCallback,
 } from './functions'
-import { identity } from './functions'
 import length from './length'
 import { atIndex, head, indexOf } from './arrayAccessors'
+import { always, identity } from './functions'
 import { forEach, map, reduce } from './iteration'
 import { not, strictEquality } from './logic'
 import {
@@ -44,6 +44,7 @@ import { every, isEven, isNumber, isOdd, isString, some } from './predicates'
 
 export {
   add,
+  always,
   atIndex,
   Callback,
   CallbackBinary,

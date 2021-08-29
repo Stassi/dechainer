@@ -1,18 +1,21 @@
+import type { State } from './state'
+import { always } from './functions'
 import { increment } from './math'
+import state from './state'
 
 type Counter = Record<'count', () => number> &
   Record<'increment' | 'reset', () => void>
 
 export default function counter(): Counter {
-  let count: number = 0
+  const { set, get: count }: State<number> = state(0)
 
   return {
-    count: (): number => count,
+    count,
     increment(): void {
-      count = increment(count)
+      set(increment)
     },
     reset(): void {
-      count = 0
+      set(always(0))
     },
   }
 }
