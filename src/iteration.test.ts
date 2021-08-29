@@ -9,6 +9,16 @@ type Counter = Record<'count', () => number> &
 describe('iteration', () => {
   describe.each([
     {
+      input: [0],
+      expected: {
+        add: 0,
+        decrement: [-1],
+        increment: [1],
+        length: 1,
+        multiply: 0,
+      },
+    },
+    {
       input: [1, 2, 3],
       expected: {
         add: 6,
