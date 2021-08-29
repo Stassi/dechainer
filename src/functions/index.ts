@@ -1,4 +1,5 @@
 import type {
+  Always,
   Callback,
   CallbackBinary,
   CallbackCurried,
@@ -19,10 +20,12 @@ import type {
   Predicate,
   ReduceCallback,
 } from './Callback'
+import always from './always'
 import curryBinary from './curryBinary'
 import identity from './identity'
 
 export type {
+  Always,
   Callback,
   CallbackBinary,
   CallbackCurried,
@@ -43,4 +46,4 @@ export type {
   Predicate,
   ReduceCallback,
 }
-export { curryBinary, identity }
+export { always, curryBinary, identity }
