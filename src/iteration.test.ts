@@ -1,6 +1,10 @@
 import type { NumberBinaryCallback, NumberCallback } from './functions'
-import { map, reduce } from './iteration'
+import counter from './counter'
+import { forEach, map, reduce } from './iteration'
 import { add, decrement, increment, multiply } from './math'
+
+type Counter = Record<'count', () => number> &
+  Record<'increment' | 'reset', () => void>
 
 describe('iteration', () => {
   describe.each([
@@ -10,6 +14,7 @@ describe('iteration', () => {
         add: 6,
         decrement: [0, 1, 2],
         increment: [2, 3, 4],
+        length: 3,
         multiply: 6,
       },
     },
@@ -19,6 +24,7 @@ describe('iteration', () => {
         add: 12,
         decrement: [1, 3, 5],
         increment: [3, 5, 7],
+        length: 3,
         multiply: 48,
       },
     },
@@ -31,6 +37,36 @@ describe('iteration', () => {
       input: number[]
       expected: Record<string, number | number[]>
     }) => {
+      describe('forEach(...)', () => {
+        describe('increment counter', () => {
+          const {
+            count,
+            increment: incrementCounter,
+            reset: resetCounter,
+          }: Counter = counter()
+
+          beforeEach(resetCounter)
+
+          const expectedLength: number = <number>expected.length
+
+          describe('curried', () => {
+            it(`should increment ${expectedLength} times`, () => {
+              forEach(incrementCounter)(input)
+
+              expect(count()).toBe(expectedLength)
+            })
+          })
+
+          describe('uncurried', () => {
+            it(`should increment ${expectedLength} times`, () => {
+              forEach(incrementCounter, input)
+
+              expect(count()).toBe(expectedLength)
+            })
+          })
+        })
+      })
+
       describe('map(...)', () => {
         describe.each([
           {
