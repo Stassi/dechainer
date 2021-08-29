@@ -1,6 +1,6 @@
 {
   "name": "dechainer",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "description": "Functional utilities.",
   "keywords": [
     "accessors",
