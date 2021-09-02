@@ -1,8 +1,10 @@
+import add from './add'
 import divide from './divide'
+import exponentiate from './exponentiate'
 import modulo from './modulo'
+import multiply from './multiply'
 import remainder from './remainder'
 import subtract from './subtract'
-import { add, exponentiate, multiply } from './arithmetic'
 
 describe('arithmetic', () => {
   describe.each([

@@ -1,5 +1,5 @@
 import type { NumberCallback } from '../functions'
-import { add } from './arithmetic'
+import add from './add'
 import subtract from './subtract'
 
 export const increment: NumberCallback = add(1)

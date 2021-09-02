@@ -1,5 +1,5 @@
 import type { NumberCallback } from '../functions'
-import { add } from './arithmetic'
+import add from './add'
 import remainder from './remainder'
 
 export default function modulo(x: number): NumberCallback
