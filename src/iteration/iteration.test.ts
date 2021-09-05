@@ -1,12 +1,10 @@
+import type { CounterImpersistent } from '../counter'
 import type { NumberBinaryCallback, NumberCallback } from '../functions'
-import counter from '../counter'
+import { counterImpersistent } from '../counter'
 import forEach from './forEach'
 import map from './map'
 import reduce from './reduce'
 import { add, decrement, increment, multiply } from '../math'
-
-type Counter = Record<'count', () => number> &
-  Record<'increment' | 'reset', () => void>
 
 describe('iteration', () => {
   describe.each([
@@ -55,7 +53,7 @@ describe('iteration', () => {
             count,
             increment: incrementCounter,
             reset: resetCounter,
-          }: Counter = counter()
+          }: CounterImpersistent = counterImpersistent()
 
           beforeEach(resetCounter)
 
