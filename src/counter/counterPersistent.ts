@@ -3,9 +3,7 @@ import { decrement, increment } from '../math'
 export type CounterPersistent = Record<'state', number> &
   Record<'decrement' | 'increment', () => CounterPersistent>
 
-export default function counterPersistent(
-  state: number = 0
-): CounterPersistent {
+export default function counterPersistent(state: number): CounterPersistent {
   return {
     state,
     decrement: (): CounterPersistent => counterPersistent(decrement(state)),

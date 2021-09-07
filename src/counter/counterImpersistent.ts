@@ -8,7 +8,7 @@ export type CounterImpersistent = Record<'count', Always<number>> &
   Record<'decrement' | 'increment' | 'reset', Always<void>>
 
 export default function counterImpersistent(
-  initialState: number = 0
+  initialState: number
 ): CounterImpersistent {
   const { set, get: count }: State<number> = state(initialState)
 
