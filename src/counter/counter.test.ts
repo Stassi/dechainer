@@ -1,14 +1,13 @@
 import type { CounterImpersistent } from './counterImpersistent'
 import type { CounterPersistent } from './counterPersistent'
-import counterImpersistent from './counterImpersistent'
-import counterPersistent from './counterPersistent'
+import counter from './counter'
 
 describe('counter', () => {
   describe('persistent', () => {
     const {
       decrement: decrementCounter,
       increment: incrementCounter,
-    }: CounterPersistent = counterPersistent()
+    }: CounterPersistent = counter({ impersistent: false })
 
     describe('increment', () => {
       it('should increment the counter by 1', () => {
@@ -24,8 +23,9 @@ describe('counter', () => {
   })
 
   describe('impersistent', () => {
-    const { count, decrement, increment, reset }: CounterImpersistent =
-      counterImpersistent()
+    const { count, decrement, increment, reset }: CounterImpersistent = counter(
+      { impersistent: true }
+    )
 
     beforeEach(reset)
 
