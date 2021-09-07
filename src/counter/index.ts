@@ -1,7 +1,6 @@
 import type { CounterImpersistent } from './counterImpersistent'
 import type { CounterPersistent } from './counterPersistent'
-import counterImpersistent from './counterImpersistent'
-import counterPersistent from './counterPersistent'
+import counter from './counter'
 
 export type { CounterImpersistent, CounterPersistent }
-export { counterImpersistent, counterPersistent }
+export { counter }

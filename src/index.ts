@@ -1,3 +1,4 @@
+import type { CounterPersistent, CounterImpersistent } from './counter'
 import type {
   Callback,
   CallbackBinary,
@@ -19,6 +20,7 @@ import type {
   Predicate,
   ReduceCallback,
 } from './functions'
+import { counter } from './counter'
 import length from './length'
 import { atIndex, head, indexOf } from './arrayAccessors'
 import { always, identity } from './functions'
@@ -51,6 +53,9 @@ export {
   CallbackCurried,
   CallbackOptional,
   ceiling,
+  counter,
+  CounterImpersistent,
+  CounterPersistent,
   decrement,
   divide,
   entries,
