@@ -1,6 +1,6 @@
 {
   "name": "dechainer",
-  "version": "0.2.12",
+  "version": "0.2.13",
   "description": "Functional utilities.",
   "keywords": [
     "accessors",
@@ -35,7 +35,7 @@
     "jest": "^27.0.5",
     "prettier": "2.3.2",
     "rollup": "^2.56.3",
-    "rollup-plugin-ts": "^1.4.0",
+    "rollup-plugin-ts": "^1.4.1",
     "ts-jest": "^27.0.5",
     "typescript": "^4.4.2"
   },
