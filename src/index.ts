@@ -41,7 +41,7 @@ import {
   remainder,
   subtract,
 } from './math'
-import { entries, fromEntries } from './objectEntries'
+import { entries, fromEntries, keys } from './structures'
 import { every, isEven, isNumber, isOdd, isString, some } from './predicates'
 
 export {
@@ -78,6 +78,7 @@ export {
   isNumber,
   isOdd,
   isString,
+  keys,
   length,
   map,
   modulo,
