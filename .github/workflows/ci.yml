@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.22.x, 14.17.x, 16.7.x]
+        node-version: [12.22.x, 14.18.x, 16.13.x, 17.2.x]
         os: [macos-latest, ubuntu-latest, windows-latest]
 
     steps:
@@ -35,9 +35,9 @@ jobs:
         run: npm run build
 
       - name: Coverage report generation
-        if: matrix.os == 'ubuntu-latest' && matrix.node-version == '16.7.x'
+        if: matrix.os == 'ubuntu-latest' && matrix.node-version == '16.13.x'
         run: npm run coverage
 
       - name: Submit coverage report to provider
-        if: matrix.os == 'ubuntu-latest' && matrix.node-version == '16.7.x'
+        if: matrix.os == 'ubuntu-latest' && matrix.node-version == '16.13.x'
         uses: codecov/codecov-action@v1
