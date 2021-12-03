@@ -5,8 +5,8 @@ import { add, subtract } from '../math'
 
 type Duration = { duration: number }
 
-const addTen: NumberCallback = add(10),
-  subtractTen: NumberCallback = subtract(10),
+const addFifty: NumberCallback = add(50),
+  subtractFifty: NumberCallback = subtract(50),
   delayedSuccess: (duration: number) => Promise<Duration> = delay(
     (duration: number) => ({
       duration,
@@ -14,9 +14,9 @@ const addTen: NumberCallback = add(10),
   )
 
 describe('race', () => {
-  describe.each([10, 20])('timeout: %i ms', (timeout: number) => {
-    const faster: number = subtractTen(timeout),
-      slower: number = addTen(timeout),
+  describe.each([50, 100])('timeout: %i ms', (timeout: number) => {
+    const faster: number = subtractFifty(timeout),
+      slower: number = addFifty(timeout),
       expectedResolution: Duration = {
         duration: faster,
       },
