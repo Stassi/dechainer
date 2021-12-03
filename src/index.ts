@@ -1,3 +1,4 @@
+import type { Resolution } from './async'
 import type { CounterPersistent, CounterImpersistent } from './counter'
 import type {
   Callback,
@@ -20,6 +21,7 @@ import type {
   Predicate,
   ReduceCallback,
 } from './functions'
+import { delay, race } from './async'
 import { counter } from './counter'
 import length from './length'
 import { atIndex, head, indexOf } from './arrayAccessors'
@@ -57,6 +59,7 @@ export {
   CounterImpersistent,
   CounterPersistent,
   decrement,
+  delay,
   divide,
   entries,
   every,
@@ -92,11 +95,13 @@ export {
   NumberMapCallback,
   NumberNAryCurried,
   NumberPredicate,
+  Predicate,
+  race,
   reciprocal,
   reduce,
-  Predicate,
   ReduceCallback,
   remainder,
+  Resolution,
   some,
   strictEquality,
   subtract,
