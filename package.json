@@ -33,7 +33,7 @@
     "@skypack/package-check": "^0.2.2",
     "@types/jest": "^27.0.1",
     "jest": "^27.0.5",
-    "prettier": "2.4.1",
+    "prettier": "2.5.0",
     "rollup": "^2.56.3",
     "rollup-plugin-ts": "^2.0.2",
     "ts-jest": "^27.0.5",
