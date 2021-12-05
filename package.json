@@ -1,6 +1,6 @@
 {
   "name": "dechainer",
-  "version": "0.2.14",
+  "version": "0.3.0",
   "description": "Functional utilities.",
   "keywords": [
     "accessors",
@@ -13,12 +13,16 @@
   "license": "MIT",
   "author": "Andreas Stassivik <andreas@stassi.net> (https://github.com/Stassi)",
   "files": [
-    "lib/**/*"
+    "lib",
+    "!lib/*.cjs.d*"
   ],
-  "main": "./lib/dechainer.mjs",
+  "main": "./lib/dechainer.cjs",
   "type": "module",
   "types": "./lib/dechainer.d.ts",
-  "exports": "./lib/dechainer.mjs",
+  "exports": {
+    "import": "./lib/dechainer.mjs",
+    "require": "./lib/dechainer.cjs"
+  },
   "repository": "github:Stassi/dechainer",
   "scripts": {
     "build": "rollup -c",
