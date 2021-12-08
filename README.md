@@ -7,6 +7,7 @@
 ![size repository](https://img.shields.io/github/languages/code-size/Stassi/dechainer?style=plastic)
 ![size minified](https://img.shields.io/bundlephobia/min/dechainer?style=plastic)
 ![size minzip ](https://img.shields.io/bundlephobia/minzip/dechainer?style=plastic)
+[![codecov](https://codecov.io/gh/Stassi/dechainer/branch/main/graph/badge.svg?token=jnQwb2i7gw)](https://codecov.io/gh/Stassi/dechainer)
 [![Continuous integration](https://github.com/Stassi/dechainer/actions/workflows/ci.yml/badge.svg)](https://github.com/Stassi/dechainer/actions/workflows/ci.yml)
 [![CodeQL](https://github.com/Stassi/dechainer/actions/workflows/codeql.yml/badge.svg)](https://github.com/Stassi/dechainer/actions/workflows/codeql.yml)
 
