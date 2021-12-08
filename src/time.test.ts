@@ -10,8 +10,8 @@ describe('time', () => {
   })
 
   describe('durationTimer', () => {
-    describe.each([0, 5])('duration: %i ms', (duration: number) => {
-      it('should return the approximate elapsed time', async () => {
+    describe.each([200, 400])('duration: %i ms', (duration: number) => {
+      it('should return the elapsed time or greater', async () => {
         const elapsed: Always<number> = durationTimer()
         await sleep(duration)
         expect(elapsed()).toBeGreaterThanOrEqual(duration)
