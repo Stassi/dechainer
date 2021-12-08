@@ -1,4 +1,6 @@
+import type { IdentityCallbackAsync } from '../functions'
 import type { Resolution } from './promises'
+import { identity } from '../functions'
 
 type Delayable<T> = (duration: number) => T
 type DelayParam<T> = number | Delayable<T>
@@ -54,5 +56,7 @@ const delay = <
       delayUnary({ duration, delayable: paramOne })
   }
 }
+
+export const sleep: IdentityCallbackAsync<number> = delay(identity)
 
 export default delay

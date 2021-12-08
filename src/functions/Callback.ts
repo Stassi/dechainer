@@ -9,6 +9,7 @@ export type MapCallback<T, U> = Callback<T[], U[]>
 export type ReduceCallback<T> = Callback<T[], T>
 
 export type IdentityCallback<T> = Callback<T, T>
+export type IdentityCallbackAsync<T> = Callback<T, Promise<T>>
 export type IdentityBinaryCallback<T> = (x: T, y: T) => T
 export type IdentityMapCallback<T> = MapCallback<T, T>
 
