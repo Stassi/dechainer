@@ -9,6 +9,7 @@ import type {
   IdentityBinaryCallback,
   IdentityBinaryCurried,
   IdentityCallback,
+  IdentityCallbackAsync,
   IdentityMapCallback,
   IdentityNAryCurried,
   ForEachCallback,
@@ -22,7 +23,7 @@ import type {
   Predicate,
   ReduceCallback,
 } from './functions'
-import { delay, race } from './async'
+import { delay, race, sleep } from './async'
 import { counter } from './counter'
 import length from './length'
 import { atIndex, head, indexOf } from './arrayAccessors'
@@ -44,8 +45,9 @@ import {
   remainder,
   subtract,
 } from './math'
-import { entries, fromEntries, keys } from './structures'
 import { every, isEven, isNumber, isOdd, isString, some } from './predicates'
+import { entries, fromEntries, keys } from './structures'
+import { durationTimer, now } from './time'
 
 export {
   add,
@@ -63,6 +65,7 @@ export {
   decrement,
   delay,
   divide,
+  durationTimer,
   entries,
   every,
   exponentiate,
@@ -75,6 +78,7 @@ export {
   IdentityBinaryCallback,
   IdentityBinaryCurried,
   IdentityCallback,
+  IdentityCallbackAsync,
   IdentityMapCallback,
   IdentityNAryCurried,
   increment,
@@ -91,6 +95,7 @@ export {
   negate,
   MapCallback,
   not,
+  now,
   NumberBinaryCallback,
   NumberBinaryCurried,
   NumberCallback,
@@ -104,6 +109,7 @@ export {
   ReduceCallback,
   remainder,
   Resolution,
+  sleep,
   some,
   strictEquality,
   subtract,
