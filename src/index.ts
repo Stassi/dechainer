@@ -1,6 +1,7 @@
 import type { Resolution } from './async'
 import type { CounterPersistent, CounterImpersistent } from './counter'
 import type {
+  Always,
   Callback,
   CallbackBinary,
   CallbackCurried,
@@ -48,6 +49,7 @@ import { every, isEven, isNumber, isOdd, isString, some } from './predicates'
 
 export {
   add,
+  Always,
   always,
   atIndex,
   Callback,
