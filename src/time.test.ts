@@ -3,8 +3,8 @@ import { sleep } from './async'
 import { add, subtract } from './math'
 import { durationTimer, now } from './time'
 
-const addOneHundred: NumberCallback = add(100)
-const subtractOneHundred: NumberCallback = subtract(100)
+const addTwoHundred: NumberCallback = add(200)
+const subtractTwoHundred: NumberCallback = subtract(200)
 
 describe('time', () => {
   describe('now', () => {
@@ -14,10 +14,10 @@ describe('time', () => {
   })
 
   describe('durationTimer', () => {
-    describe.each([100, 200])('duration: %i ms', (duration: number) => {
+    describe.each([200, 400])('duration: %i ms', (duration: number) => {
       it('should return the elapsed time (±100 ms)', async () => {
-        const lowerBound: number = subtractOneHundred(duration),
-          upperBound: number = addOneHundred(duration),
+        const lowerBound: number = subtractTwoHundred(duration),
+          upperBound: number = addTwoHundred(duration),
           stop: Always<number> = durationTimer()
 
         await sleep(duration)
