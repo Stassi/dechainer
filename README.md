@@ -45,6 +45,7 @@ const stringIdentity: IdentityCallback<string> = (param: string): string =>
 ```
 
 ## Interface
+Partial documentation of functions available in this library.
 
 ### async
 
