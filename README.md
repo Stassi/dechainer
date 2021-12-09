@@ -50,9 +50,9 @@ const stringIdentity: IdentityCallback<string> = (param: string): string =>
 
 #### delay
 
-Delay the execution of asynchronous code by a specified duration.
+Delay code execution by a specified duration.
 
-- `delayable` is a callback function with optional `duration` parameter (e.g.: `(duration) => console.log(duration)`).
+- `delayable` is a callback function with an optional `duration` parameter (e.g.: `(duration) => console.log(duration)`).
 - `duration` is the time in milliseconds that should elapse before `delayable` is called.
 
 ##### Unary
