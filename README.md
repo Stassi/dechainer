@@ -113,3 +113,50 @@ await race(contender)(timeout)
 // or
 await race(timeout)(contender)
 ```
+
+### counter
+
+Counter with optional internal state and respective tradeoffs.
+
+#### Persistent
+
+Persistent counter that is purely functional and side effect free with a smaller, simpler interface. Resetting is achieved by declaring a new variable. Return value(s) should be stored to be practical.
+
+```javascript
+const { decrement, increment, state } = counter({ impersistent: false })
+// state === 0
+// increment().state === 1
+```
+
+##### Methods
+
+Methods returned by calling `counter({ impersistent: false })`, each returning a new persistent counter:
+
+- `decrement` decreases the current value by `1`.
+- `increment` increases the current value by `1`.
+
+##### Properties
+
+Properties returned by calling `counter({ impersistent: false })`:
+
+- `state` is a number representing the counter's current value.
+
+#### Impersistent
+
+Impersistent counter that provides many methods that mutate its internal state. However, it only needs to be declared once. State is unique to each counter and not shared globally, allowing many copies to exist.
+
+```javascript
+const { count, decrement, increment, reset } = counter({ impersistent: true })
+// count() === 0
+// increment()
+// count() === 1
+```
+
+##### Methods
+
+Methods returned by calling `counter({ impersistent: true })`:
+
+- `count` returns the counter's current number value.
+- `decrement` is a side effect that decreases the internal value by `1`.
+- `increment` is a side effect that increases the internal value by `1`.
+- `reset` is a side effect that sets the internal value to `0`.
