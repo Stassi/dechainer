@@ -5,7 +5,7 @@ import { durationTimer, now } from './time'
 describe('time', () => {
   describe('now', () => {
     it('should return elapsed milliseconds since the epoch', () => {
-      expect(now()).toBeGreaterThan(1638956000000)
+      expect(now()).toBeGreaterThan(1639000000000)
     })
   })
 
