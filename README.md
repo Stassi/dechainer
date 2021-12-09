@@ -116,7 +116,7 @@ await race(timeout)(contender)
 
 ### counter
 
-Counter with optional internal state and respective tradeoffs.
+Counter with optional internal state and respective tradeoffs. Multiple unique counters of both types may exist without overlapping state.
 
 #### Persistent
 
@@ -143,7 +143,7 @@ Properties returned by calling `counter({ impersistent: false })`:
 
 #### Impersistent
 
-Impersistent counter that provides many methods that mutate its internal state. However, it only needs to be declared once. State is unique to each counter and not shared globally, allowing many copies to exist.
+Impersistent counter that provides many methods that mutate its internal state. However, it only needs to be declared once. State is unique to each counter and not shared globally.
 
 ```javascript
 const { count, decrement, increment, reset } = counter({ impersistent: true })
