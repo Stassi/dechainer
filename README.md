@@ -80,3 +80,36 @@ await delay(delayable)(duration)
 // or
 await delay(duration)(delayable)
 ```
+
+#### race
+
+Race asynchronous code execution against a specified [timeout](<https://en.wikipedia.org/wiki/Timeout_(computing)>).
+
+- `contender` is an asynchronous function that resolves only if the elapsed time is less than the `timeout` duration.
+- `timeout` is the time in milliseconds that should elapse before a `RangeError` is thrown.
+
+##### Unary
+
+```javascript
+await race({ contender, timeout })
+```
+
+##### Binary
+
+Parameters can be provided in any order.
+
+```javascript
+await race(contender, timeout)
+// or
+await race(timeout, contender)
+```
+
+##### Curried
+
+Parameters can be provided in any order.
+
+```javascript
+await race(contender)(timeout)
+// or
+await race(timeout)(contender)
+```
