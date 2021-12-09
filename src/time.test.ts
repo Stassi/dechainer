@@ -15,7 +15,7 @@ describe('time', () => {
 
   describe('durationTimer', () => {
     describe.each([200, 400])('duration: %i ms', (duration: number) => {
-      it('should return the elapsed time (±100 ms)', async () => {
+      it('should return the elapsed time (±200 ms)', async () => {
         const lowerBound: number = subtractTwoHundred(duration),
           upperBound: number = addTwoHundred(duration),
           stop: Always<number> = durationTimer()
