@@ -116,7 +116,7 @@ await race(timeout)(contender)
 
 ### counter
 
-Counter with optional internal state and respective tradeoffs. Multiple unique counters of both types may exist without overlapping state.
+Counter with optional (im-)persistent internal state and respective tradeoffs. Multiple unique counters of both types may exist without overlapping state.
 
 #### Persistent
 
